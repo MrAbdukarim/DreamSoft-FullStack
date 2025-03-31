@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #756AEE;
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-black: #000;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
+    --bs-gray-700: #495057;
+    --bs-gray-800: #343a40;
+    --bs-gray-900: #212529;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-primary-rgb: 13, 110, 253;
+    --bs-secondary-rgb: 108, 117, 125;
+    --bs-success-rgb: 25, 135, 84;
+    --bs-info-rgb: 13, 202, 240;
+    --bs-warning-rgb: 255, 193, 7;
+    --bs-danger-rgb: 220, 53, 69;
+    --bs-light-rgb: 248, 249, 250;
+    --bs-dark-rgb: 33, 37, 41;
+    --bs-primary-text-emphasis: #052c65;
+    --bs-secondary-text-emphasis: #2b2f32;
+    --bs-success-text-emphasis: #0a3622;
+    --bs-info-text-emphasis: #055160;
+    --bs-warning-text-emphasis: #664d03;
+    --bs-danger-text-emphasis: #58151c;
+    --bs-light-text-emphasis: #495057;
+    --bs-dark-text-emphasis: #495057;
+    --bs-primary-bg-subtle: #cfe2ff;
+    --bs-secondary-bg-subtle: #e2e3e5;
+    --bs-success-bg-subtle: #d1e7dd;
+}
+
+body {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+header {
+    width: 100vw;
+    padding: 15px;
+    position: fixed;
+    z-index: 9;
+    background: #ffffff;
+    box-shadow: rgba(25, 25, 25, 0.41) 1px 1px 10px;
+
+    & > nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+
+        .logo img {
+            width: 230px;
+        }
+
+        .nav-links {
+            width: 55%;
+            margin-right: 5vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+
+            li a {
+                font-size: 20px;
+                text-decoration: none;
+                font-weight: 500;
+                color: #191919;
+                transition: text-decoration 5s linear, text-decoration-color 0s ease;
+
+                &:hover {
+                    text-decoration: underline 3px;
+                    text-underline-offset: 10px;
+                    text-decoration-color: var(--primary);
+                    text-decoration-style: solid;
+
+                }
+            }
+
+            li i {
+                color: #191919;
+                font-size: 24px;
+                transition: color .3s ease;
+
+                &:hover {
+                    color: var(--primary);
+                }
+            }
+        }
+    }
+}
+
+/* Carousel Styles */
+.slider {
+    position: relative;
+    height: 100vh;
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    padding-top: 50px;
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            h2 {
+                font-size: 72px;
+                letter-spacing: 2px;
+                font-weight: 600;
+                color: #191919;
+            }
+
+            p {
+                font-size: 15px;
+                font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+                color: var(--bs-secondary-text-emphasis);
+            }
+
+            button {
+                border: none;
+            }
+
+            .btn {
+                background: var(--primary);
+                padding: 15px 25px;
+                border-radius: 0;
+                border: 2px solid var(--primary);
+                font-size: 15px;
+                font-weight: 500;
+                color: #fff;
+                transition: background .3s ease-in;
+
+                &:hover {
+                    background: var(--bs-dark);
+                    border-color: var(--bs-dark);
+                }
+            }
+
+        }
+    }
+}
