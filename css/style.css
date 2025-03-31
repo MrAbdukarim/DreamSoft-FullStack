@@ -176,7 +176,34 @@ header {
                     border-color: var(--bs-dark);
                 }
             }
+        }
+        .swiper-pagination{
+            position: absolute;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            flex-direction: column;
+            gap: 1rem;
+            padding-right: 1.5rem;
 
+            .swiper-pagination-bullet{
+                background: #ffffff;
+                width: 35px;
+                height: 5px;
+                border-radius: 0;
+                transition: background .3s ease-in;
+                opacity: 1;
+
+
+                &:hover{
+                    background: var(--primary);
+                }
+            }
+
+            .swiper-pagination-bullet-active{
+                background: var(--primary);
+            }
         }
     }
 }
