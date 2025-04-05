@@ -318,7 +318,6 @@ header {
 /* Project Styeles */
 .projects {
     width: 90vw;
-    height: 80vh;
     margin: auto;
     display: flex;
     align-items: center;
@@ -457,5 +456,15 @@ header {
             transform: scale(0) rotate(-180deg);
         }
     }
+
+}
+
+.experience{
+    width: 50vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    align-items: center;
+    margin: auto auto 50px;
 
 }
