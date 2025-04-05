@@ -393,6 +393,7 @@ header {
             background-size: cover;
 
             &:hover {
+                transform: scale(0.9);
                 .info-image {
                     opacity: 1 !important;
                 }
