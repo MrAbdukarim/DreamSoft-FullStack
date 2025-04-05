@@ -91,3 +91,6 @@ animateValue(obj2, 0, 2, 2000);
 animateValue(obj3, 0, 40, 3000);
 animateValue(obj4, 0, 12, 3000);
 animateValue(obj5, 0, 160, 3000);
+
+// Net Animation
+
