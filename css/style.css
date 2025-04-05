@@ -285,14 +285,16 @@ header {
             /*    }*/
             /*}*/
 
-            .service-icon{
+            .service-icon {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                i{
+
+                i {
                     font-size: 50px;
                 }
-                i:nth-child(2){
+
+                i:nth-child(2) {
                     font-size: 60px;
                     color: gray;
                     z-index: -1;
@@ -304,11 +306,155 @@ header {
             }
 
             &:hover {
-                .service-icon > i:nth-child(2){
+                .service-icon > i:nth-child(2) {
                     transform: rotate(0deg);
                 }
             }
         }
 
     }
+}
+
+/* Project Styeles */
+.projects {
+    width: 90vw;
+    height: 80vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    h3 {
+        font-size: 45px;
+        margin-bottom: 50px;
+    }
+
+    p {
+        width: 40%;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .main-project-section {
+        width: 100%;
+
+        .filter-links {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a {
+                color: gray;
+                padding: 1rem;
+                text-decoration: none;
+                position: relative;
+                text-transform: uppercase;
+                text-align: center;
+                font-weight: 500;
+                font-size: 18px;
+
+                &::after {
+                    content: '|';
+                    position: absolute;
+                    right: 0;
+                    color: rgba(128, 128, 128, 0.49);
+                }
+
+                &:hover {
+                    color: var(--primary);
+                }
+
+                &.active {
+                    color: var(--primary);
+                    transition: all 0.3s ease;
+                }
+            }
+        }
+    }
+
+    .filter-sections {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 50px auto;
+        gap: 1rem;
+
+        div {
+            width: 420px;
+            height: 350px;
+            opacity: 0;
+            display: none;
+            transition: all 500s ease;
+            background-position: center;
+            background-size: cover;
+
+            &:hover {
+                .info-image {
+                    opacity: 1 !important;
+                }
+            }
+
+
+            .info-image {
+                width: 90%;
+                height: 90%;
+                margin: 15px auto;
+                background: #ffffff;
+                text-align: start;
+                padding: 3rem 2rem;
+                opacity: 0 !important;
+                transition: all 0.3s ease;
+
+                i {
+                    font-size: 35px;
+                    transition: color .3s ease;
+
+                    &:hover {
+                        color: var(--primary);
+                    }
+
+                    a {
+                        font-size: 24px;
+                        margin-left: 15px;
+                        color: var(--primary);
+                        text-decoration: none;
+                        transition: color .3s ease;
+
+                        &:hover {
+                            color: lightgray;
+                        }
+                    }
+                }
+
+                p {
+                    width: 100%;
+                    text-align: start;
+                    font-size: 14px;
+                    margin-top: 25px;
+                    color: #191919;
+                }
+            }
+        }
+    }
+
+
+    .view {
+        display: block !important;
+        opacity: 1 !important;
+        transform: scale(1) rotate(0deg);
+        border-radius: 4px;
+        animation: selected 300ms 1 ease-in-out;
+    }
+
+    @keyframes selected {
+        0% {
+            border-radius: 100%;
+            transform: scale(0) rotate(-180deg);
+        }
+    }
+
 }
