@@ -92,5 +92,41 @@ animateValue(obj3, 0, 40, 3000);
 animateValue(obj4, 0, 12, 3000);
 animateValue(obj5, 0, 160, 3000);
 
-// Net Animation
+// second filter
+document.addEventListener('DOMContentLoaded', function () {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const tabLine = document.querySelector('.tab-line');
 
+    // Initialize the tab line position and width
+    function updateTabLine(activeTab) {
+        tabLine.style.width = `${activeTab.offsetWidth}px`;
+        tabLine.style.transform = `translateX(${activeTab.offsetLeft}px)`;
+    }
+
+    // Set initial tab line position
+    updateTabLine(document.querySelector('.tab-button.active'));
+
+    // Tab switching functionality
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to current button and corresponding content
+            this.classList.add('active');
+            const tabId = `tab${this.dataset.tab}`;
+            document.getElementById(tabId).classList.add('active');
+
+            // Update tab line position
+            updateTabLine(this);
+        });
+    });
+
+    // Handle window resize to keep tab line correctly positioned
+    window.addEventListener('resize', function () {
+        const activeTab = document.querySelector('.tab-button.active');
+        updateTabLine(activeTab);
+    });
+});
