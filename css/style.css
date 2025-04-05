@@ -17,6 +17,7 @@
 }
 
 body {
+
     font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -1092,7 +1093,17 @@ footer {
                     letter-spacing: 0.5rem;
                 }
             }
-
         }
     }
+
+}
+
+.end-footer {
+    width: 100%;
+    height: 5vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
 }
