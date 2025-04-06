@@ -130,3 +130,6 @@ document.addEventListener('DOMContentLoaded', function () {
         updateTabLine(activeTab);
     });
 });
+
+// Gallery
+
