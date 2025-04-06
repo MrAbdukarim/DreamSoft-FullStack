@@ -12,5 +12,6 @@
     <orderEntry type="library" name="bootstrap-icons" level="application" />
     <orderEntry type="library" name="swiper" level="application" />
     <orderEntry type="library" name="aos" level="application" />
+    <orderEntry type="library" name="@fancyapps/ui" level="application" />
   </component>
 </module>
