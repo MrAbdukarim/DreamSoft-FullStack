@@ -6,81 +6,582 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!--    fonts   -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .section-gallery {
+            width: 90vw;
+            height: 60vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto 3rem;
+            overflow: hidden;
+
+            .bg-element {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: calc(100% + 150px);
+                height: calc(100% + 150px);
+                will-change: transform;
+                animation: bg-element 100s linear infinite;
+                transform: translate3d(-75px, -75px, 0) rotate(0.001deg);
+                background-position: 50% 50%;
+                background-size: cover;
+                z-index: -1;
+            }
+
+
+            .container {
+
+                h1 {
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
+                    font-size: 4rem;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    letter-spacing: 2px;
+                }
+
+                .banner-links {
+                    display: flex;
+                    justify-content: center;
+
+                    a {
+                        font-size: 1rem;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: gray;
+                        }
+
+                        &::after {
+                            content: '/';
+                            color: gray;
+                            padding: .5rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        @keyframes bg-element {
+            25% {
+                transform: translate3d(-150px, -150px, 0) rotate(0.001deg);
+            }
+
+            75% {
+                transform: translate3d(0, 0, 0) rotate(0.001deg);
+            }
+        }
+
+        .white-section {
+            margin-bottom: 3rem;
+
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                .title {
+                    margin-bottom: 2rem;
+                }
+
+                .pricing-boxes {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 4rem;
+
+                    .pricing-box {
+                        border-radius: 1rem;
+                        padding: 3rem;
+                        position: relative;
+                        overflow: hidden;
+                        box-shadow: 0 0 5px rgba(0, 0, 0, 0.27);
+
+
+                        .pricing-header {
+                            margin-top: 2rem;
+                            text-align: center;
+
+                            h3 {
+                                text-transform: uppercase;
+                                font-size: 1.2rem;
+                            }
+
+                            h1 {
+                                letter-spacing: 2px;
+                                font-weight: 550;
+                            }
+
+                            h4 {
+                                text-transform: uppercase;
+                                font-size: 1rem;
+                                letter-spacing: 3px;
+                            }
+                        }
+
+                        hr {
+                            margin: 2rem 0;
+                        }
+
+                        .pricing-content {
+                            margin-bottom: 3rem;
+
+                            ul {
+                                list-style: none;
+
+                                li {
+                                    font-size: 1rem;
+                                    margin-bottom: 10px;
+
+                                    &::before {
+                                        content: "✓";
+                                        margin-right: 10px;
+                                        color: #6f42c1;
+                                        font-size: 1.5rem;
+                                        font-weight: 900;
+                                    }
+                                }
+                            }
+                        }
+
+                        .btn-box {
+                            width: 100%;
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+
+                            button {
+                                width: 100%;
+                                padding: 1rem;
+                                background: #d1d1d1;
+                                border: none;
+                                font-size: 1rem;
+                                letter-spacing: 2px;
+                                transition: all 0.2s ease-in-out;
+
+                                &:hover {
+                                    background: #7b68ee;
+                                    color: #fff;
+                                }
+
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            position: relative;
+
+                            &::before {
+                                content: 'popular';
+                                text-transform: uppercase;
+                                position: absolute;
+                                right: 2rem;
+                                top: 1rem;
+                                padding: 2px 6px;
+                                background: #7b68ee;
+                                border-radius: 3px;
+                                color: #fff;
+                                font-weight: 500;
+                                letter-spacing: 2px;
+                            }
+
+                            .btn-box {
+                                button {
+                                    background: #7b68ee;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .black-section {
+            margin-bottom: 3rem;
+
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                .title {
+                    margin-bottom: 2rem;
+                }
+
+                .pricing-boxes {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 4rem;
+
+                    .pricing-box {
+                        border-radius: 1rem;
+                        padding: 3rem;
+                        position: relative;
+                        overflow: hidden;
+                        box-shadow: 0 0 5px rgba(0, 0, 0, 0.27);
+                        background-color: #1b1829;
+
+
+                        .pricing-header {
+                            margin-top: 2rem;
+                            text-align: center;
+
+                            h3 {
+                                text-transform: uppercase;
+                                font-size: 1.2rem;
+                                color: white;
+                            }
+
+                            h1 {
+                                letter-spacing: 2px;
+                                font-weight: 550;
+                                color: white;
+
+                            }
+
+                            h4 {
+                                text-transform: uppercase;
+                                font-size: 1rem;
+                                letter-spacing: 3px;
+                                color: white;
+
+                            }
+                        }
+
+                        hr {
+                            margin: 2rem 0;
+                            color: white;
+
+                        }
+
+                        .pricing-content {
+                            margin-bottom: 3rem;
+
+                            ul {
+                                list-style: none;
+
+                                li {
+                                    font-size: 1rem;
+                                    margin-bottom: 10px;
+                                    color: white;
+
+
+                                    &::before {
+                                        content: "✓";
+                                        margin-right: 10px;
+                                        color: #6f42c1;
+                                        font-size: 1.5rem;
+                                        font-weight: 900;
+                                    }
+                                }
+                            }
+                        }
+
+                        .btn-box {
+                            width: 100%;
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+
+                            button {
+                                width: 100%;
+                                padding: 1rem;
+                                background: #454545;
+                                border: none;
+                                font-size: 1rem;
+                                letter-spacing: 2px;
+                                transition: all 0.2s ease-in-out;
+                                color: white;
+                                text-transform: uppercase;
+
+                                &:hover {
+                                    background: #7b68ee;
+                                    color: #fff;
+                                }
+
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            position: relative;
+
+                            &::before {
+                                content: 'popular';
+                                text-transform: uppercase;
+                                position: absolute;
+                                right: 2rem;
+                                top: 1rem;
+                                padding: 2px 6px;
+                                background: #7b68ee;
+                                border-radius: 3px;
+                                color: #fff;
+                                font-weight: 500;
+                                letter-spacing: 2px;
+                            }
+
+                            .btn-box {
+                                button {
+                                    background: #7b68ee;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </style>
 </head>
 <body>
-<section class="section section-sm section-first bg-default">
+
+<header class="header shadow-sm">
+    <div class="container-fluid">
+        <nav>
+            <div class="logo">
+                <a href="../index.html"><img src="../img/logo-default-191x52.png" alt="Dream Soft logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><i class="bi bi-search"></i></li>
+                <li><i class="bi bi-share"></i></li>
+                <li style="display: none" class="social_links">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-google"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="section-gallery section">
     <div class="container">
-        <h3>White</h3>
-        <div class="row row-30 justify-content-center">
-            <div class="col-md-6 col-lg-5 col-xl-4">
-                <div class="box-pricing">
-                    <div class="box-pricing-body">
-                        <div class="box-pricing-caption">
-                            <h5 class="box-pricing-title">Basic</h5>
-                            <h3 class="box-pricing-price">$500.00</h3>
-                            <div class="box-pricing-time">starting at</div>
-                        </div>
-                        <div class="divider divider-35"></div>
-                        <ul class="box-pricing-list">
-                            <li class="active">Concept development</li>
-                            <li class="active">UI design</li>
-                            <li>Configuration management</li>
-                            <li>Software quality assurance</li>
-                            <li>App integration</li>
-                        </ul>
-                    </div>
-                    <div class="box-pricing-button"><a class="button button-lg button-block button-gray-4" href="#">Get
-                        started</a></div>
+        <h1>Pricing</h1>
+        <div class="banner-links">
+            <a class="page-link" href="../index.html">Home</a>
+            <a class="page-link" href="#">Pricing</a>
+        </div>
+    </div>
+    <div class="bg-element" style="background-image: url('../img/bg-elements.jpg')"></div>
+</section>
+
+<section class="white-section">
+    <div class="container">
+        <div class="title"><h1>White</h1></div>
+        <div class="pricing-boxes">
+            <div class="pricing-box">
+                <div class="pricing-header">
+                    <h3>basic</h3>
+                    <h1>$500.00</h1>
+                    <h4>starting at</h4>
+                </div>
+                <hr>
+                <div class="pricing-content">
+                    <ul>
+                        <li>Concept development</li>
+                        <li>UI design</li>
+                        <li style="color: gray">Configuration management</li>
+                        <li style="color: gray">Software quality assurance</li>
+                        <li style="color: gray">App integration</li>
+                    </ul>
+                </div>
+                <div class="btn-box">
+                    <button>Get Started</button>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-5 col-xl-4">
-                <div class="box-pricing box-pricing-popular">
-                    <div class="box-pricing-body">
-                        <div class="box-pricing-caption">
-                            <h5 class="box-pricing-title">Optimal</h5>
-                            <h3 class="box-pricing-price">$800.00</h3>
-                            <div class="box-pricing-time">starting at</div>
-                        </div>
-                        <div class="divider divider-35"></div>
-                        <ul class="box-pricing-list">
-                            <li class="active">Concept development</li>
-                            <li class="active">UI design</li>
-                            <li class="active"> Configuration management</li>
-                            <li class="active"> Software quality assurance</li>
-                            <li>App integration</li>
-                        </ul>
-                    </div>
-                    <div class="box-pricing-button"><a class="button button-lg button-block button-primary" href="#">Get
-                        started</a></div>
-                    <div class="box-pricing-badge">popular</div>
+            <div class="pricing-box">
+                <div class="pricing-header">
+                    <h3>basic</h3>
+                    <h1>$500.00</h1>
+                    <h4>starting at</h4>
+                </div>
+                <hr>
+                <div class="pricing-content">
+                    <ul>
+                        <li>Concept development</li>
+                        <li>UI design</li>
+                        <li>Configuration management</li>
+                        <li>Software quality assurance</li>
+                        <li style="color: gray">App integration</li>
+                    </ul>
+                </div>
+                <div class="btn-box">
+                    <button>Get Started</button>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-5 col-xl-4">
-                <div class="box-pricing">
-                    <div class="box-pricing-body">
-                        <div class="box-pricing-caption">
-                            <h5 class="box-pricing-title">Ultimate</h5>
-                            <h3 class="box-pricing-price">$1200.00</h3>
-                            <div class="box-pricing-time">starting at</div>
-                        </div>
-                        <div class="divider divider-35"></div>
-                        <ul class="box-pricing-list">
-                            <li class="active">Concept development</li>
-                            <li class="active">UI design</li>
-                            <li class="active"> Configuration management</li>
-                            <li class="active"> Software quality assurance</li>
-                            <li class="active"> App integration</li>
-                        </ul>
-                    </div>
-                    <div class="box-pricing-button"><a class="button button-lg button-block button-gray-4" href="#">Get
-                        started</a></div>
+            <div class="pricing-box">
+                <div class="pricing-header">
+                    <h3>basic</h3>
+                    <h1>$500.00</h1>
+                    <h4>starting at</h4>
+                </div>
+                <hr>
+                <div class="pricing-content">
+                    <ul>
+                        <li>Concept development</li>
+                        <li>UI design</li>
+                        <li>Configuration management</li>
+                        <li>Software quality assurance</li>
+                        <li>App integration</li>
+                    </ul>
+                </div>
+                <div class="btn-box">
+                    <button>Get Started</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+<section class="black-section">
+    <div class="container">
+        <div class="title"><h1>Black</h1></div>
+        <div class="pricing-boxes">
+            <div class="pricing-box">
+                <div class="pricing-header">
+                    <h3>basic</h3>
+                    <h1>$500.00</h1>
+                    <h4>starting at</h4>
+                </div>
+                <hr>
+                <div class="pricing-content">
+                    <ul>
+                        <li>Concept development</li>
+                        <li>UI design</li>
+                        <li style="color: gray">Configuration management</li>
+                        <li style="color: gray">Software quality assurance</li>
+                        <li style="color: gray">App integration</li>
+                    </ul>
+                </div>
+                <div class="btn-box">
+                    <button>Get Started</button>
+                </div>
+            </div>
+            <div class="pricing-box">
+                <div class="pricing-header">
+                    <h3>basic</h3>
+                    <h1>$500.00</h1>
+                    <h4>starting at</h4>
+                </div>
+                <hr>
+                <div class="pricing-content">
+                    <ul>
+                        <li>Concept development</li>
+                        <li>UI design</li>
+                        <li>Configuration management</li>
+                        <li>Software quality assurance</li>
+                        <li style="color: gray">App integration</li>
+                    </ul>
+                </div>
+                <div class="btn-box">
+                    <button>Get Started</button>
+                </div>
+            </div>
+            <div class="pricing-box">
+                <div class="pricing-header">
+                    <h3>basic</h3>
+                    <h1>$500.00</h1>
+                    <h4>starting at</h4>
+                </div>
+                <hr>
+                <div class="pricing-content">
+                    <ul>
+                        <li>Concept development</li>
+                        <li>UI design</li>
+                        <li>Configuration management</li>
+                        <li>Software quality assurance</li>
+                        <li>App integration</li>
+                    </ul>
+                </div>
+                <div class="btn-box">
+                    <button>Get Started</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" class="left-content">
+        <div class="footer-logo">
+            <img src="../img/logo-inverse-191x52.png" alt="">
+        </div>
+        <div class="footer-text">
+            <p>Our company has been developing high-quality and reliable software for corporate needs since 2008. We
+                are renowned professionals of software development.</p>
+        </div>
+        <div class="full-info">
+            <div class="footer-info">
+                <h1>adress</h1>
+                <a href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a>
+            </div>
+            <div class="footer-info">
+                <h1>phones</h1>
+                <a href="#">+1 323-913-4688</a>,
+                <a href="#"> +1 323-888-4554</a>
+            </div>
+            <div class="footer-info">
+                <h1>e-mail</h1>
+                <a href="#">info@demolink.org</a>,
+                <a href="#">mail@demolink.org</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-google"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" class="middle-content">
+        <h1>Questions? Contact Us</h1>
+        <form action="">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" class="right-content">
+        <h1>What We Offer</h1>
+        <div class="footer-links">
+            <div class="footer-link"><h3>DB Management</h3></div>
+            <div class="footer-link"><h3>iOS/MacOS</h3></div>
+            <div class="footer-link"><h3>Android Apps</h3></div>
+            <div class="footer-link"><h3>Windows Apps</h3></div>
+            <div class="footer-link"><h3>UX & UI</h3></div>
+        </div>
+    </div>
+</footer>
+<div class="footer-end">
+    <p> &copy;2025 DreamSoft. All rights reserved. Privacy Policy.</p>
+</div>
 
 <div class="back-to-top" id="backToTop">
     <i class="bi bi-chevron-up"></i>
