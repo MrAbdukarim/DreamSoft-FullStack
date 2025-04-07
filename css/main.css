@@ -23,6 +23,7 @@ header {
         justify-content: space-between;
         align-items: center;
         margin: auto;
+        padding: 0 4rem;
 
         .logo img {
             width: 230px;
