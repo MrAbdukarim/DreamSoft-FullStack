@@ -72,6 +72,10 @@
 
         .contact-icon-box:hover {
             transform: translateY(-5px);
+
+            .contact-icon {
+                border-bottom: 3px solid var(--primary-color);
+            }
         }
 
         .contact-icon {
@@ -81,8 +85,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
+            font-size: 50px;
             color: var(--primary-color);
+            transition: all .3s ease;
         }
 
         .contact-info {
@@ -101,6 +106,27 @@
             color: var(--dark-color);
         }
 
+        .form-title {
+            display: flex;
+            align-items: center;
+
+            h2 {
+                &::after {
+                    content: "|";
+                    margin: 0 1rem;
+                    font-weight: 300;
+                    opacity: 0.2;
+                }
+            }
+
+            p {
+                font-size: 1.3rem;
+                color: var(--dark-color);
+                font-weight: bolder;
+                font-family: "Poppins", sans-serif, serif;
+            }
+        }
+
         .form-control {
             padding: 15px;
             border-radius: 5px;
@@ -112,6 +138,10 @@
         .form-control:focus {
             box-shadow: none;
             border-color: var(--primary-color);
+
+            &::placeholder {
+                opacity: 0;
+            }
         }
 
         textarea.form-control {
@@ -121,44 +151,20 @@
         .btn-primary {
             background-color: var(--primary-color);
             border-color: var(--primary-color);
-            padding: 12px 30px;
+            padding: 1rem 2rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             transition: all 0.3s;
+            border-radius: 0;
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-light);
-            border-color: var(--primary-light);
+            background-color: transparent;
+            border-color: #000000;
+            color: #000000;
             transform: translateY(-2px);
         }
 
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 5px;
-            background-color: var(--primary-color);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s, transform 0.3s;
-            z-index: 1000;
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
-        }
 
         .contact-section {
             padding: 80px 0;
@@ -220,12 +226,21 @@
     </div>
 </nav>
 
+<section class="map-section">
+    <div class="container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19662.490180896086!2d-118.29842393536677!3d34.13845574305601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c0623fe71971%3A0xc829e89a5dcc767e!2s4730%20Crystal%20Springs%20Dr%2C%20Los%20Angeles%2C%20CA%2090027%2C%20USA!5e0!3m2!1sen!2s!4v1744058056745!5m2!1sen!2s"
+                class="m-4"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+
 <!-- Contact Information Section -->
 <section class="contact-section">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="contact-icon-box">
+                <div class="shadow-sm contact-icon-box">
                     <div class="contact-icon">
                         <i class="bi bi-phone"></i>
                     </div>
@@ -236,7 +251,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="contact-icon-box">
+                <div class="shadow-sm contact-icon-box">
                     <div class="contact-icon">
                         <i class="bi bi-house"></i>
                     </div>
@@ -247,7 +262,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="contact-icon-box">
+                <div class="shadow-sm contact-icon-box">
                     <div class="contact-icon">
                         <i class="bi bi-chat-dots"></i>
                     </div>
@@ -265,7 +280,7 @@
 <section class="contact-form-section pb-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="form-title col-lg-12">
                 <h2 class="section-title">Get In Touch</h2>
                 <p class="form-text">If you have any questions, just fill in the contact form, and we will answer you
                     shortly.</p>
@@ -351,7 +366,7 @@
 
 <!-- Back to Top Button -->
 <div class="back-to-top" id="backToTop">
-    <i class="fas fa-arrow-up"></i>
+    <i class="bi bi-chevron-up"></i>
 </div>
 
 <!-- Bootstrap JS Bundle with Popper -->
@@ -377,10 +392,8 @@
         });
     });
 
-    // Form submission handling
     document.getElementById('contactForm').addEventListener('submit', function (e) {
         e.preventDefault();
-        // Here you would typically add AJAX to send the form data to a server
         alert('Thank you for your message! We will get back to you soon.');
         this.reset();
     });
