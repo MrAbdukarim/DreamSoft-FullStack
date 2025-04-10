@@ -1,3 +1,45 @@
+const searchIcon = document.querySelector('.search-icon i');
+const searchForm = document.querySelector('.search-form');
+
+searchIcon.addEventListener('click', function () {
+    searchForm.classList.toggle('active');
+    // Close social links if open
+    socialLinks.classList.remove('active');
+});
+
+// Share functionality
+const shareIcon = document.querySelector('.share-icon i');
+const socialLinks = document.querySelector('.social_links');
+
+shareIcon.addEventListener('click', function () {
+    socialLinks.classList.toggle('active');
+    // Close search form if open
+    searchForm.classList.remove('active');
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function (event) {
+    const isSearchIcon = event.target.closest('.search-icon');
+    const isShareIcon = event.target.closest('.share-icon');
+
+    if (!isSearchIcon && searchForm.classList.contains('active')) {
+        searchForm.classList.remove('active');
+    }
+
+    if (!isShareIcon && socialLinks.classList.contains('active')) {
+        socialLinks.classList.remove('active');
+    }
+});
+
+// Prevent clicks inside the dropdowns from closing them
+searchForm.addEventListener('click', function (event) {
+    event.stopPropagation();
+});
+
+socialLinks.addEventListener('click', function (event) {
+    event.stopPropagation();
+});
+
 new Swiper(".mySwiper", {
     direction: "vertical",
     spaceBetween: 30,
