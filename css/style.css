@@ -1,18 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
 :root {
     --primary: #756AEE;
     --white: #fff;
 }
 
 .header {
-    width: 100vw;
+    width: 100%;
     padding: 15px 0;
     background-color: #fff;
     position: fixed;
     z-index: 9;
 }
 
-.container {
-    max-width: 1200px;
+.header > .container {
+    width: 100vw;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -126,174 +135,168 @@ nav {
     color: #7b68ee;
 }
 
+/* Footer styles */
 footer {
+    margin: auto;
+    max-width: 1980px;
     background: #1b1829;
-
-    .container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        justify-content: space-between;
-        padding: 3rem 0;
-        gap: 2rem;
-        overflow: hidden;
-
-        .left-content {
-
-            .footer-logo {
-                margin-bottom: 1rem;
-            }
-
-            .footer-text {
-                font-size: 1rem;
-                color: #8a8a91;
-            }
-
-            .full-info {
-                .footer-info {
-                    display: flex;
-                    align-items: center;
-                    border-bottom: 1px solid rgba(128, 128, 128, 0.37);
-                    margin: 2rem 0;
-                    color: var(--white);
-                    padding-bottom: 1rem;
-
-                    h1 {
-                        font-size: 16px;
-                        text-transform: uppercase;
-                        color: var(--primary);
-                        margin-right: 2rem;
-                    }
-
-                    a {
-                        font-size: 16px;
-                        color: var(--white);
-                        text-decoration: none;
-                        align-items: center;
-                        margin-left: 1rem;
-                        transition: color 0.3s ease;
-
-                        &:hover {
-                            color: var(--primary);
-                        }
-                    }
-                }
-
-                .footer-social {
-                    display: flex;
-                    gap: 1rem;
-                    align-items: center;
-
-                    a {
-                        font-size: 24px;
-                        background: #2f2e40;
-                        border: 5px solid #2f2e40;
-                        padding: 10px 15px;
-                        border-radius: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        color: #fff;
-                        transition: all 0.3s ease-in-out;
-
-                        &:hover {
-                            background: #1b1829;
-                            border: 5px solid #2f2e40;
-                            color: #44435a;
-                        }
-                    }
-                }
-            }
-        }
-
-        .middle-content {
-            h1 {
-                color: #2f2e40;
-            }
-
-            form {
-                input, textarea {
-                    width: 100%;
-                    margin-bottom: 1rem;
-                    padding: 1rem;
-                    border: none;
-                    background-color: #2f2e40;
-                    transition: all 0.3s ease;
-
-                    &::placeholder {
-                        color: #ffffff;
-                        opacity: 1;
-                    }
-
-                    &:focus {
-                        color: #ffffff;
-                        outline: none;
-
-                        &::placeholder {
-                            opacity: 0;
-                        }
-                    }
-                }
-
-                textarea {
-                    height: 150px;
-                }
-
-                button {
-                    width: 100%;
-                    padding: 1rem 2rem;
-                    border: none;
-                    transition: all 0.3s ease;
-
-                    &:hover {
-                        background-color: black;
-                        color: white;
-                    }
-                }
-            }
-        }
-
-        .right-content {
-            padding: 0 2rem;
-
-            h1 {
-                color: #2f2e40;
-            }
-
-            .footer-link {
-                border-top: 1px solid rgba(128, 128, 128, 0.37);
-                border-bottom: 1px solid rgba(128, 128, 128, 0.37);
-                color: white;
-                padding: 1rem 0;
-
-                h3 {
-                    font-size: 1.3rem;
-                    transition: all .3s ease;
-                }
-
-                &:hover {
-                    h3 {
-                        color: var(--primary);
-                        letter-spacing: 0.5rem;
-                    }
-                }
-
-            }
-        }
-    }
-
-    .footer-end {
-        width: 100%;
-        background: #fff;
-        text-align: center;
-        color: gray;
-
-        p {
-            padding: 1rem 0;
-            margin: 0;
-        }
-    }
 }
 
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    padding: 3rem 0;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+footer .container .left-content .footer-logo {
+    margin-bottom: 1rem;
+}
+
+footer .container .left-content .footer-text {
+    font-size: 1rem;
+    color: #8a8a91;
+}
+
+footer .container .left-content .full-info .footer-info {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.37);
+    margin: 2rem 0;
+    color: var(--white);
+    padding-bottom: 1rem;
+}
+
+footer .container .left-content .full-info .footer-info h1 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-right: 2rem;
+}
+
+footer .container .left-content .full-info .footer-info a {
+    font-size: 16px;
+    color: var(--white);
+    text-decoration: none;
+    align-items: center;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+footer .container .left-content .full-info .footer-info a:hover {
+    color: var(--primary);
+}
+
+footer .container .left-content .full-info .footer-social {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+footer .container .left-content .full-info .footer-social a {
+    font-size: 24px;
+    background: #2f2e40;
+    border: 5px solid #2f2e40;
+    padding: 10px 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+footer .container .left-content .full-info .footer-social a:hover {
+    background: #1b1829;
+    border: 5px solid #2f2e40;
+    color: #44435a;
+}
+
+footer .container .middle-content h1 {
+    color: #2f2e40;
+}
+
+footer .container .middle-content form input,
+footer .container .middle-content form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: none;
+    background-color: #2f2e40;
+    transition: all 0.3s ease;
+}
+
+footer .container .middle-content form input::placeholder,
+footer .container .middle-content form textarea::placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+
+footer .container .middle-content form input:focus,
+footer .container .middle-content form textarea:focus {
+    color: #ffffff;
+    outline: none;
+}
+
+footer .container .middle-content form input:focus::placeholder,
+footer .container .middle-content form textarea:focus::placeholder {
+    opacity: 0;
+}
+
+footer .container .middle-content form textarea {
+    height: 150px;
+}
+
+footer .container .middle-content form button {
+    width: 100%;
+    padding: 1rem 2rem;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+footer .container .middle-content form button:hover {
+    background-color: black;
+    color: white;
+}
+
+footer .container .right-content {
+    padding: 0 2rem;
+}
+
+footer .container .right-content h1 {
+    color: #2f2e40;
+}
+
+footer .container .right-content .footer-link {
+    border-top: 1px solid rgba(128, 128, 128, 0.37);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.37);
+    color: white;
+    padding: 1rem 0;
+}
+
+footer .container .right-content .footer-link h3 {
+    font-size: 1.3rem;
+    transition: all .3s ease;
+}
+
+footer .container .right-content .footer-link:hover h3 {
+    color: var(--primary);
+    letter-spacing: 0.5rem;
+}
+
+footer .footer-end {
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    color: gray;
+}
+
+footer .footer-end p {
+    padding: 1rem 0;
+    margin: 0;
+}
 
 .back-to-top {
     position: fixed;
