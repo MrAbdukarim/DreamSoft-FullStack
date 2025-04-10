@@ -4,29 +4,25 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
+    <!--    Bootstrap V5.3-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <!--  JS Library  -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <!-- CSS for Header and Footer -->
     <link rel="stylesheet" href="../css/style.css">
 
-    <!--    fonts   -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet">
-
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
         .section-gallery {
-            width: 90vw;
-            height: 60vh;
+            max-width: 1600px;
+            min-height: 560px;
             position: relative;
             display: flex;
             align-items: center;
@@ -355,25 +351,31 @@
 <body>
 
 <header class="header shadow-sm">
-    <div class="container-fluid">
+    <div class="container">
         <nav>
             <div class="logo">
-                <a href="../index.html"><img src="../img/logo-default-191x52.png" alt="Dream Soft logo"></a>
+                <a href="#"><img src="../img/logo-default-191x52.png" alt="Dream Soft logo"></a>
             </div>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
+                <li><a class="active" href="pricing.html">Pricing</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <li><i class="bi bi-search"></i></li>
-                <li><i class="bi bi-share"></i></li>
-                <li style="display: none" class="social_links">
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-twitter"></i></a>
-                    <a href="#"><i class="bi bi-google"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
+                <li class="search-icon"><i class="bi bi-search"></i>
+                    <div class="search-form">
+                        <input type="text" placeholder="Search...">
+                        <button type="submit">Search</button>
+                    </div>
+                </li>
+                <li class="share-icon"><i class="bi bi-share"></i>
+                    <div class="social_links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-google"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -528,71 +530,72 @@
 </section>
 
 <footer>
-    <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" class="left-content">
-        <div class="footer-logo">
-            <img src="../img/logo-inverse-191x52.png" alt="">
+    <div class="container">
+        <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" class="left-content">
+            <div class="footer-logo">
+                <img src="../img/logo-inverse-191x52.png" alt="">
+            </div>
+            <div class="footer-text">
+                <p>Our company has been developing high-quality and reliable software for corporate needs since 2008. We
+                    are renowned professionals of software development.</p>
+            </div>
+            <div class="full-info">
+                <div class="footer-info">
+                    <h1>adress</h1>
+                    <a href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a>
+                </div>
+                <div class="footer-info">
+                    <h1>phones</h1>
+                    <a href="#">+1 323-913-4688</a>,
+                    <a href="#"> +1 323-888-4554</a>
+                </div>
+                <div class="footer-info">
+                    <h1>e-mail</h1>
+                    <a href="#">info@demolink.org</a>,
+                    <a href="#">mail@demolink.org</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-google"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="footer-text">
-            <p>Our company has been developing high-quality and reliable software for corporate needs since 2008. We
-                are renowned professionals of software development.</p>
+        <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" class="middle-content">
+            <h1>Questions? Contact Us</h1>
+            <form action="">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </div>
-        <div class="full-info">
-            <div class="footer-info">
-                <h1>adress</h1>
-                <a href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a>
-            </div>
-            <div class="footer-info">
-                <h1>phones</h1>
-                <a href="#">+1 323-913-4688</a>,
-                <a href="#"> +1 323-888-4554</a>
-            </div>
-            <div class="footer-info">
-                <h1>e-mail</h1>
-                <a href="#">info@demolink.org</a>,
-                <a href="#">mail@demolink.org</a>
-            </div>
-            <div class="footer-social">
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-google"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
+        <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" class="right-content">
+            <h1>What We Offer</h1>
+            <div class="footer-links">
+                <div class="footer-link"><h3>DB Management</h3></div>
+                <div class="footer-link"><h3>iOS/MacOS</h3></div>
+                <div class="footer-link"><h3>Android Apps</h3></div>
+                <div class="footer-link"><h3>Windows Apps</h3></div>
+                <div class="footer-link"><h3>UX & UI</h3></div>
             </div>
         </div>
     </div>
-    <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" class="middle-content">
-        <h1>Questions? Contact Us</h1>
-        <form action="">
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <textarea placeholder="Message"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-    <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" class="right-content">
-        <h1>What We Offer</h1>
-        <div class="footer-links">
-            <div class="footer-link"><h3>DB Management</h3></div>
-            <div class="footer-link"><h3>iOS/MacOS</h3></div>
-            <div class="footer-link"><h3>Android Apps</h3></div>
-            <div class="footer-link"><h3>Windows Apps</h3></div>
-            <div class="footer-link"><h3>UX & UI</h3></div>
-        </div>
+    <div class="footer-end">
+        <p> &copy;2025 DreamSoft. All rights reserved. Privacy Policy.</p>
     </div>
 </footer>
-<div class="footer-end">
-    <p> &copy;2025 DreamSoft. All rights reserved. Privacy Policy.</p>
-</div>
 
 <div class="back-to-top" id="backToTop">
     <i class="bi bi-chevron-up"></i>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"
-        integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
-        crossorigin="anonymous"></script>
+<!--    Scripts      -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 <script src="../js/app.js"></script>
 </body>
 </html>

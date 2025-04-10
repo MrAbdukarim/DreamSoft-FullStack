@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DreamSoft - Contact Us</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
+
+    <!--  Logo browser page  -->
+    <link rel="icon" type="image/x-icon" href="../img/logo-inverse-191x52.png">
+    <title>DreamSoft - Software Development Company </title>
+
+    <!--    Fonts   -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+
+    <!--    BootStrap CDN and ICONS  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        * {
-            font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            -webkit-font-smoothing: subpixel-antialiased;;
-        }
+    <!--  AOS Animation CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!--  CSS for Header and Footer  -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
         :root {
             --primary-color: #7b68ee;
             --primary-light: #8a79f1;
@@ -31,34 +39,8 @@
             color: #333;
         }
 
-        .navbar {
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-        }
-
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            font-weight: 700;
-            font-size: 24px;
-            color: var(--dark-color);
-        }
-
-        .navbar-brand .logo-icon {
-            color: var(--primary-color);
-            font-size: 28px;
-            margin-right: 8px;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            color: var(--dark-color) !important;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary-color) !important;
+        .map-section {
+            padding-top: 5rem;
         }
 
         .contact-icon-box {
@@ -187,44 +169,38 @@
     </style>
 </head>
 <body>
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
+<!--Header-->
+<header class="header shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="../img/logo-default-191x52.png" alt="">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Home</a>
+        <nav>
+            <div class="logo">
+                <a href="#"><img src="../img/logo-default-191x52.png" alt="Dream Soft logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a class="active" href="contact.html">Contact Us</a></li>
+                <li class="search-icon"><i class="bi bi-search"></i>
+                    <div class="search-form">
+                        <input type="text" placeholder="Search...">
+                        <button type="submit">Search</button>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="gallery.html">Gallery</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="pricing.html">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="blog.html">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="contact.html">Contact Us</a>
+                <li class="share-icon"><i class="bi bi-share"></i>
+                    <div class="social_links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-google"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
                 </li>
             </ul>
-            <div class="d-flex ms-3">
-                <a href="#" class="nav-link"><i class="bi bi-search"></i></a>
-                <a href="#" class="nav-link"><i class="bi bi-share"></i></a>
-            </div>
-        </div>
+        </nav>
     </div>
-</nav>
+</header>
 
 <section class="map-section">
     <div class="container">
@@ -309,94 +285,74 @@
 </section>
 
 <footer>
-    <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" class="left-content">
-        <div class="footer-logo">
-            <img src="../img/logo-inverse-191x52.png" alt="">
+    <div class="container">
+        <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" class="left-content">
+            <div class="footer-logo">
+                <img src="../img/logo-inverse-191x52.png" alt="">
+            </div>
+            <div class="footer-text">
+                <p>Our company has been developing high-quality and reliable software for corporate needs since 2008. We
+                    are renowned professionals of software development.</p>
+            </div>
+            <div class="full-info">
+                <div class="footer-info">
+                    <h1>adress</h1>
+                    <a href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a>
+                </div>
+                <div class="footer-info">
+                    <h1>phones</h1>
+                    <a href="#">+1 323-913-4688</a>,
+                    <a href="#"> +1 323-888-4554</a>
+                </div>
+                <div class="footer-info">
+                    <h1>e-mail</h1>
+                    <a href="#">info@demolink.org</a>,
+                    <a href="#">mail@demolink.org</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-google"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="footer-text">
-            <p>Our company has been developing high-quality and reliable software for corporate needs since 2008. We
-                are renowned professionals of software development.</p>
+        <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" class="middle-content">
+            <h1>Questions? Contact Us</h1>
+            <form action="">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </div>
-        <div class="full-info">
-            <div class="footer-info">
-                <h1>adress</h1>
-                <a href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a>
-            </div>
-            <div class="footer-info">
-                <h1>phones</h1>
-                <a href="#">+1 323-913-4688</a>,
-                <a href="#"> +1 323-888-4554</a>
-            </div>
-            <div class="footer-info">
-                <h1>e-mail</h1>
-                <a href="#">info@demolink.org</a>,
-                <a href="#">mail@demolink.org</a>
-            </div>
-            <div class="footer-social">
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-google"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
+        <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" class="right-content">
+            <h1>What We Offer</h1>
+            <div class="footer-links">
+                <div class="footer-link"><h3>DB Management</h3></div>
+                <div class="footer-link"><h3>iOS/MacOS</h3></div>
+                <div class="footer-link"><h3>Android Apps</h3></div>
+                <div class="footer-link"><h3>Windows Apps</h3></div>
+                <div class="footer-link"><h3>UX & UI</h3></div>
             </div>
         </div>
     </div>
-    <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" class="middle-content">
-        <h1>Questions? Contact Us</h1>
-        <form action="">
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <textarea placeholder="Message"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-    <div data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" class="right-content">
-        <h1>What We Offer</h1>
-        <div class="footer-links">
-            <div class="footer-link"><h3>DB Management</h3></div>
-            <div class="footer-link"><h3>iOS/MacOS</h3></div>
-            <div class="footer-link"><h3>Android Apps</h3></div>
-            <div class="footer-link"><h3>Windows Apps</h3></div>
-            <div class="footer-link"><h3>UX & UI</h3></div>
-        </div>
+    <div class="footer-end">
+        <p> &copy;2025 DreamSoft. All rights reserved. Privacy Policy.</p>
     </div>
 </footer>
-<div class="footer-end">
-    <p> &copy;2025 DreamSoft. All rights reserved. Privacy Policy.</p>
-</div>
 
 <!-- Back to Top Button -->
 <div class="back-to-top" id="backToTop">
     <i class="bi bi-chevron-up"></i>
 </div>
 
-<!-- Bootstrap JS Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Custom JavaScript -->
+<!--    Scripts      -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // Back to top button functionality
-    const backToTopButton = document.getElementById('backToTop');
-
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
-    });
-
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        alert('Thank you for your message! We will get back to you soon.');
-        this.reset();
-    });
+    AOS.init();
 </script>
+<script src="../js/app.js"></script>
+
 </body>
 </html>
