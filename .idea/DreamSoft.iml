@@ -13,5 +13,6 @@
     <orderEntry type="library" name="swiper" level="application" />
     <orderEntry type="library" name="aos" level="application" />
     <orderEntry type="library" name="@fancyapps/ui" level="application" />
+    <orderEntry type="library" name="purecss" level="application" />
   </component>
 </module>
